@@ -35,15 +35,14 @@ namespace pencil
 	{
 		friend class EventDispatcher;
 	public:
+		bool handled = false;
+
 		virtual EventType getEventType() const = 0;
 		virtual const char *getName() const = 0;
 		virtual int getCategoryFlags() const = 0;
 		virtual std::string toString() const { return getName(); }
 
 		inline bool isInCategory(EventCategory category) const { return getCategoryFlags() & category; }
-
-	protected:
-		bool m_handled = false;
 	};
 
 	class EventDispatcher
@@ -58,7 +57,7 @@ namespace pencil
 		{
 			if (m_event.getEventType() == t::getStaticType())
 			{
-				m_event.m_handled = func(*(t *) &m_event);
+				m_event.handled = func(*(t *) &m_event);
 				return true;
 			}
 			return false;

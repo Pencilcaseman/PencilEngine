@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "PencilEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "PencilEngine/vendor/Glad/include"
 
 include "PencilEngine/vendor/GLFW"
+include "PencilEngine/vendor/Glad"
 
 project "PencilEngine"
     location "PencilEngine"
@@ -34,11 +36,13 @@ project "PencilEngine"
     includedirs {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
     
     links {
         "GLFW",
+        "Glad",
         "opengl32.lib"
     }
 
@@ -49,7 +53,8 @@ project "PencilEngine"
 
         defines {
             "PC_PLATFORM_WINDOWS",
-            "PC_BUILD_DLL"
+            "PC_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands {
@@ -58,14 +63,17 @@ project "PencilEngine"
 
     filter "configurations:Debug"
         defines "PC_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "PC_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "PC_DIST"
+        buildoptions "/MD"
         optimize "On"
 
     filter { "system:windows", "configurations:Release" }
@@ -106,14 +114,17 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "PC_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "PC_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "PC_DIST"
+        buildoptions "/MD"
         optimize "On"
 
     filter { "system:windows", "configurations:Release" }

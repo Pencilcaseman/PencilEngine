@@ -7,6 +7,12 @@
     <Filter Include="PencilEngine\events">
       <UniqueIdentifier>{1ACD7C47-862E-5A55-0F9C-A0077BFC9014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\windows">
+      <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\PencilEngine\application.h">
@@ -30,22 +36,40 @@
     <ClInclude Include="src\PencilEngine\events\mouseEvent.h">
       <Filter>PencilEngine\events</Filter>
     </ClInclude>
+    <ClInclude Include="src\PencilEngine\layer.h">
+      <Filter>PencilEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PencilEngine\layerStack.h">
+      <Filter>PencilEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\PencilEngine\log.h">
+      <Filter>PencilEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PencilEngine\window.h">
       <Filter>PencilEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\pcpch.h" />
     <ClInclude Include="src\pencil.h" />
-    <ClInclude Include="src\PencilEngine\window.h" />
-    <ClInclude Include="src\platform\windows\windowsWindow.h" />
+    <ClInclude Include="src\platform\windows\windowsWindow.h">
+      <Filter>platform\windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PencilEngine\application.cpp">
+      <Filter>PencilEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PencilEngine\layer.cpp">
+      <Filter>PencilEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PencilEngine\layerStack.cpp">
       <Filter>PencilEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\PencilEngine\log.cpp">
       <Filter>PencilEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\pcpch.cpp" />
-    <ClCompile Include="src\platform\windows\windowsWindow.cpp" />
+    <ClCompile Include="src\platform\windows\windowsWindow.cpp">
+      <Filter>platform\windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

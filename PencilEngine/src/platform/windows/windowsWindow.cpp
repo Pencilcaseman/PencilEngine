@@ -2,12 +2,13 @@
 
 #include <PencilEngine/log.h>
 
-#include <GLFW/glfw3.h>
 #include "windowsWindow.h"
 
 #include <PencilEngine/events/applicationEvent.h>
 #include <PencilEngine/events/mouseEvent.h>
 #include <PencilEngine/events/keyEvent.h>
+
+#include <glad/glad.h>
 
 namespace pencil
 {
@@ -54,6 +55,10 @@ namespace pencil
 
 		m_window = glfwCreateWindow(props.width, props.height, m_data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_window);
+		
+		int status = gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+		PC_CORE_ASSERT(status, "Failed to initialize Glad");
+
 		glfwSetWindowUserPointer(m_window, &m_data);
 		setVSync(true);
 
