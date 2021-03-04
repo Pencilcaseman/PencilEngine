@@ -1,0 +1,3 @@
+[submodule "PencilEngine/vendor/spdlog"]
+	path = PencilEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
