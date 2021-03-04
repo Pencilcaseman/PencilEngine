@@ -4,6 +4,9 @@
     <Filter Include="PencilEngine">
       <UniqueIdentifier>{D6397414-C29C-03B9-6B22-3C6F5764CF3B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PencilEngine\events">
+      <UniqueIdentifier>{1ACD7C47-862E-5A55-0F9C-A0077BFC9014}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\PencilEngine\application.h">
@@ -15,10 +18,25 @@
     <ClInclude Include="src\PencilEngine\entryPoint.h">
       <Filter>PencilEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\PencilEngine\events\applicationEvent.h">
+      <Filter>PencilEngine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PencilEngine\events\event.h">
+      <Filter>PencilEngine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PencilEngine\events\keyEvent.h">
+      <Filter>PencilEngine\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PencilEngine\events\mouseEvent.h">
+      <Filter>PencilEngine\events</Filter>
+    </ClInclude>
     <ClInclude Include="src\PencilEngine\log.h">
       <Filter>PencilEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\pcpch.h" />
     <ClInclude Include="src\pencil.h" />
+    <ClInclude Include="src\PencilEngine\window.h" />
+    <ClInclude Include="src\platform\windows\windowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PencilEngine\application.cpp">
@@ -27,5 +45,7 @@
     <ClCompile Include="src\PencilEngine\log.cpp">
       <Filter>PencilEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\pcpch.cpp" />
+    <ClCompile Include="src\platform\windows\windowsWindow.cpp" />
   </ItemGroup>
 </Project>

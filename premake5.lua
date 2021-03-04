@@ -9,6 +9,12 @@ workspace "PencilEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "PencilEngine/vendor/GLFW/include"
+
+include "PencilEngine/vendor/GLFW"
+
 project "PencilEngine"
     location "PencilEngine"
     kind "SharedLib"
@@ -17,14 +23,23 @@ project "PencilEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "pcpch.h"
+    pchsource "PencilEngine/src/pcpch.cpp"
+
     files {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
     }
 
     includedirs {
-        "%{prj.name}/src"
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/src",
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+    
+    links {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

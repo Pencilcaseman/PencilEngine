@@ -1,8 +1,8 @@
 #pragma once
 
+#include <pcpch.h>
+
 #include <PencilEngine/core.h>
-#include <string>
-#include <functional>
 
 namespace pencil
 {
@@ -56,9 +56,9 @@ namespace pencil
 		template<typename t>
 		bool dispatch(EventFn<t> func)
 		{
-			if (m_Event.getEventType()) == t::getStaticType()
+			if (m_event.getEventType() == t::getStaticType())
 			{
-				m_event.m_handled = func(*(T *) &m_event);
+				m_event.m_handled = func(*(t *) &m_event);
 				return true;
 			}
 			return false;

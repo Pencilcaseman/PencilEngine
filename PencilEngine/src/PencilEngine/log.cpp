@@ -1,3 +1,5 @@
+#include <pcpch.h>
+
 #include <PencilEngine/log.h>
 
 namespace pencil

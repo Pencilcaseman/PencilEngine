@@ -1,8 +1,8 @@
 #pragma once
 
-#include <PencilEngine/events/event.h>
+#include <pcpch.h>
 
-#include <sstream>
+#include <PencilEngine/events/event.h>
 
 namespace pencil
 {
@@ -22,6 +22,7 @@ namespace pencil
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved);
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
 	private:
 		float m_mouseX, m_mouseY;
 	};

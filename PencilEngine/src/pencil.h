@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstdio>
+#include <pcpch.h>
 
 // Only to be included by PencilEngine applications
 #include "PencilEngine/application.h"

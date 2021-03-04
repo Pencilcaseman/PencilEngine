@@ -1,5 +1,7 @@
 #pragma once
 
+#include <pcpch.h>
+
 #ifdef PC_PLATFORM_WINDOWS
 
 extern pencil::Application *pencil::createApplication();
