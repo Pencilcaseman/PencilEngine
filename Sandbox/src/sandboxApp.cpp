@@ -12,8 +12,6 @@ public:
 	{
 
 	}
-
-
 };
 
 pencil::Application *pencil::createApplication()

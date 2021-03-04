@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core.h"
+#include <PencilEngine/core.h>
 
 namespace pencil
 {
