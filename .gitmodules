@@ -4,6 +4,3 @@
 [submodule "PencilEngine/vendor/GLFW"]
 	path = PencilEngine/vendor/GLFW
 	url = https://github.com/Pencilcaseman/glfw.git
-[submodule "PencilEngine/vendor/imgui"]
-	path = PencilEngine/vendor/imgui
-	url = https://github.com/Pencilcaseman/imgui.git
